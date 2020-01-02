@@ -2,12 +2,19 @@ import matplotlib.pyplot as plt
 
 from random_walk import RandomWalk 
 
-#make random walk
-rw = RandomWalk()
-rw.fill_walk()
+#keep making new walks, as long as the program is active
+while True:
 
-#plot points in walk
-plt.style.use('classic')
-fig, ax = plt.subplots()
-ax.scatter(rw.x_values, rw.y_values, s=15)
-plt.show()
+    #make random walk
+    rw = RandomWalk()
+    rw.fill_walk()
+
+    #plot points in walk
+    plt.style.use('classic')
+    fig, ax = plt.subplots()
+    ax.scatter(rw.x_values, rw.y_values, s=15)
+    plt.show()
+
+    keep_running = input("Make another walk? (y/n): ")
+    if keep_running == 'n':
+        break
